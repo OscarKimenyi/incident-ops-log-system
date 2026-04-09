@@ -12,7 +12,7 @@ A full-stack web application for operational teams to report, monitor, and resol
 ---
 
 ## Project Structure
-
+```
 incident-app/
 ├── backend/          # Laravel API
 │   ├── app/
@@ -38,8 +38,7 @@ incident-app/
 ├── context/     # Auth context
 ├── components/  # Reusable UI components
 └── pages/       # Page components
-
----
+```
 
 ## Setup Instructions
 
@@ -56,46 +55,64 @@ incident-app/
 
 ```bash
 cd backend
+```
 
-# Install PHP dependencies
+### Install PHP dependencies
+```bash
 composer install
+```
 
-# Copy environment file
+### Copy environment file
+```bash
 cp .env.example .env
+```
 
-# Generate application key
+### Generate application key
+```bash
 php artisan key:generate
+```
 
-# Configure your .env file:
-# DB_DATABASE=incidentlog
-# DB_USERNAME=root
-# DB_PASSWORD=your_password
+### Configure your .env file:
+```env
+DB_DATABASE=incident_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
 
-# Run migrations
+### Run migrations
+```bash
 php artisan migrate
+```
 
-# Seed the database with demo data
+### Seed the database with demo data
+```bash
 php artisan db:seed
+```
 
-# Start the backend server
+### Start the backend server
+```bash
 php artisan serve
 ```
 
-### Frontend Setup
+## Frontend Setup
 
 ```bash
 cd frontend
+```
 
-# Install Node dependencies
+### Install Node dependencies
+```bash
 npm install
+```
 
-# Start the development server
+### Start the development server
+```bash
 npm run dev
 ```
 
 ---
 
-## Access the App
+### Access the App
 
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:8000
