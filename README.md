@@ -1,4 +1,4 @@
-# IncidentLog — Incident & Operations Log System
+# IncidentApp — Incident & Operations Log System
 
 A full-stack web application for operational teams to report, monitor, and resolve incidents efficiently.
 
