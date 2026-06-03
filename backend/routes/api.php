@@ -23,6 +23,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/incidents/{incident}', [IncidentController::class, 'show']);
     Route::post('/incidents/{incident}/comment', [IncidentController::class, 'addComment']);
 
+    // Health check
+    Route::get('/health', function () {
+    return response()->json(['status' => 'ok', 'timestamp' => now()]);
+    });
+
     // Reporter + above
     Route::middleware('role:reporter,operator,admin')->group(function () {
         Route::post('/incidents', [IncidentController::class, 'store']);
