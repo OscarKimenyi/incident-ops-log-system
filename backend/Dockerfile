@@ -17,13 +17,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy application files
-COPY . .
+# Copy only the backend folder contents
+COPY backend/ .
 
 # Install PHP dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Run migrations and cache config
+# Cache Laravel config
 RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 RUN php artisan view:cache || true
@@ -31,5 +31,5 @@ RUN php artisan view:cache || true
 # Expose port
 EXPOSE 8000
 
-# Start Laravel server
+# Run migrations then start server
 CMD php artisan migrate --force && php -S 0.0.0.0:$PORT -t public
