@@ -17,11 +17,8 @@ export default function Login() {
     setLoading(true);
     try {
       const user = await login(form.email, form.password);
-      console.log('Logged in user:', user); // DEBUG
-      console.log('User role:', user?.role); // DEBUG
       navigate('/dashboard');
     } catch (err) {
-      console.error('Full error:', err); // DEBUG
       setError(err.response?.data?.message || err.message || 'Invalid credentials. Please try again.');
     } finally {
       setLoading(false);
