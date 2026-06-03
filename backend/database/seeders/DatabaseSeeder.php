@@ -12,6 +12,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // Only seed if no users exist
+        if (User::count() > 0) {
+            $this->command->info('Database already seeded. Skipping.');
+            return;
+        }
+
         // Admin
         $admin = User::create([
             'name'     => 'Admin User',
@@ -110,5 +116,7 @@ class DatabaseSeeder extends Seeder
             'new_status'  => 'resolved',
             'comment'     => 'CDN cache cleared. Images loading normally now.',
         ]);
+
+        $this->command->info('Database seeded successfully.');
     }
 }
