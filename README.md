@@ -6,7 +6,7 @@ A full-stack web application for operational teams to report, monitor, and resol
 
 ## Tech Stack
 
-- **Backend**: Laravel 11, MySQL, Laravel Sanctum (API token auth)
+- **Backend**: Laravel 11, PostgreSQL, Laravel Sanctum (API token auth)
 - **Frontend**: React 19, Vite, Tailwind CSS v4, React Router v6, Axios
 
 ---
@@ -47,7 +47,7 @@ incident-app/
 - PHP >= 8.2
 - Composer
 - Node.js >= 20
-- MySQL
+- PostgreSQL
 
 ---
 
