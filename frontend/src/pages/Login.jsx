@@ -16,10 +16,13 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
-      await login(form.email, form.password);
+      const user = await login(form.email, form.password);
+      console.log('Logged in user:', user); // DEBUG
+      console.log('User role:', user?.role); // DEBUG
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Invalid credentials. Please try again.');
+      console.error('Full error:', err); // DEBUG
+      setError(err.response?.data?.message || err.message || 'Invalid credentials. Please try again.');
     } finally {
       setLoading(false);
     }
