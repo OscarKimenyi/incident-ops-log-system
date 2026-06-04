@@ -54,7 +54,7 @@ export default function Sidebar({ isOpen, isCollapsed, toggleCollapse, closeMobi
           fixed top-0 left-0 h-full z-30 flex flex-col
           bg-slate-900 border-r border-slate-700/50
           transition-all duration-300 ease-in-out
-          lg:relative lg:translate-x-0
+          lg:sticky lg:top-0 lg:h-screen lg:translate-x-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
           ${isCollapsed ? 'lg:w-16' : 'lg:w-64'}
           w-64
