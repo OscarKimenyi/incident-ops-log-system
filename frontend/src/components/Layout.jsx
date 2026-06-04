@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-950">
+    <div className="flex h-screen overflow-hidden bg-slate-950">
       <Sidebar
         isOpen={isOpen}
         isCollapsed={isCollapsed}
@@ -23,7 +23,7 @@ export default function Layout({ children }) {
       />
 
       {/* Main content area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
 
         {/* Mobile top navbar */}
         <header className="lg:hidden flex items-center justify-between px-4 h-14 bg-slate-900 border-b border-slate-700/50 shrink-0 sticky top-0 z-10">
@@ -39,7 +39,6 @@ export default function Layout({ children }) {
             </span>
           </div>
 
-          {/* User role badge on mobile */}
           <div className="flex items-center gap-2">
             <span className={`text-xs px-2 py-0.5 rounded border ${roleColors[user?.role]} font-medium capitalize`}>
               {user?.role}
